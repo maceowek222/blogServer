@@ -1,14 +1,18 @@
 package com.codeElevate.blogServer.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+
 
 import java.util.Date;
-import java.util.List;
 
+@Getter
+@Setter
+@Builder
 @Entity
-@Data
+@AllArgsConstructor
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +26,6 @@ public class Post {
 
     private String image;
 
-    private Date date;
 
     private int likeCount;
 
@@ -30,4 +33,8 @@ public class Post {
 
     private String tags;
 
+
+    public Post() {
+
+    }
 }
