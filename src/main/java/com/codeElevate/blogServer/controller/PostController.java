@@ -73,6 +73,10 @@ public class PostController {
         }
 
     }
+    @DeleteMapping("/posts/{id}")
+    public void deletePost(@PathVariable Long id) {
+        postService.deletePost(id);
+    }
 
     private String createImageLink(String fileName) {
         return ServletUriComponentsBuilder.fromCurrentRequest()
